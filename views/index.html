@@ -1,9 +1,42 @@
-@{title('Cryptto')}
+@{layout('')}
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=11" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="robots" content="all,follow" />
+        <style>
+           html, body {
+               margin:0;
+               padding:0;
+               height:100%;
+               width:100%; 
+           }
 
-<hr />
-<br />
-<p class="center">
-	This is the main page for the cryptto<br />
-</p>
-<br />
-<br />
+           .container-background {
+               width: 100%;
+               height: 90%;
+               overflow:hidden;
+               background-repeat:no-repeat;
+               background-image: url(sky);
+               background-size: cover;
+           }
+
+           .head, .foot {
+               height: 5%;
+               background-color: black;
+           }
+        </style>
+</head>
+<body>
+        <div class="head">
+        <span style="color:#ffffff">Hello, Cryptto!</span>
+        </div>
+        <div class="container-background">
+        </div>
+        <div class="foot"></div>
+</body>
+</html>
+
