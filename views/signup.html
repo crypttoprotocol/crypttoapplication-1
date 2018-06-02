@@ -1,7 +1,49 @@
 @{layout('')}
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <body>
-This is the Sign up page.
+        <form action="#" method="POST" id="f">
+                <div>
+                        <div>Email:</div>
+                        <div><input type="text" name="email" maxlength="200" /></div>
+                </div>
+                <br />
+                <div>
+                        <div>Password:</div>
+                        <div><input type="text" name="password" value="" maxlength="30" /></div>
+                </div>
+                <br />
+                <div>
+                        <div>Your Ethereum Wallet:</div>
+                        <div><input type="text" name="wallet" value="" maxlength="1000" /></div>
+                </div>
+                <div id="error"></div>
+        </form>
+        <br />
+        <button id="signup">Submit</button>
+
+        <script>
+          $(document).ready(function() {
+            $('#signup').bind('click', function() {
+              $.post('/signup?ts=' + Date.now(), $('#f').serialize(), function(d) {
+                var err = $('#error');
+
+                if (d instanceof Array) {
+
+                  err.empty();
+                  d.forEach(function(o) {
+                    err.append('<div>' + o.error + '</div>');
+                  });
+                  err.show();
+                  return;
+                };
+
+                err.hide();
+                window.location.href = '/';
+              });
+            });
+          });
+        </script>
 </body>
 </html>
