@@ -2,6 +2,7 @@ exports.install = function() {
   F.route('/', view_main);
   F.route('/signup', view_signup);
   F.route('/signup', json_login, ['post', '*User']);
+  F.route('/admin', view_admin);
   //F.route('/sky', image_download);
 };
 
@@ -19,6 +20,11 @@ function json_login() {
   var self = this;
   // TODO : Implement workflow about the id and wallet.
   self.body.$workflow('login', self, self.callback());
+}
+
+function view_admin() {
+  var self = this;
+  self.view('admin-login');
 }
 
 function image_download() {

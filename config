@@ -12,3 +12,8 @@ mail-smtp-options               : {"secure":false,"port":25,"user":"","password"
 mail-address-from               : your@yourwebsite.com
 mail-address-reply              : your@yourwebsite.com
 mail-address-copy               :
+
+// Admin settings
+admin-id                        : admin
+admin-password                  : 1234
+admin-wallet                    : 1234

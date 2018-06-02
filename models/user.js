@@ -7,7 +7,7 @@ NEWSCHEMA('User').make(function(schema) {
 
     // Get the collection called 'users'
     var users = DATABASE('users');
-    var data = {id: model.email, password: model.password, wallet: model.wallet};
+    var data = {id: model.email, password: model.password, wallet: model.wallet, role: 'user'};
 
     users.findOne(data, function(err, result) {
       if (err) throw err;
